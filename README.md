@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Login Frontend com Next.js + Google Auth + TailwindCSS
 
-## Getting Started
+Este projeto é uma interface moderna de login e cadastro desenvolvida com **Next.js**, **TailwindCSS** e suporte à **autenticação social via Google**.
 
-First, run the development server:
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [Next.js 15+](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- Autenticação manual (email/senha)
+- Login com Google (via OAuth 2.0)
+
+---
+
+## 📁 Estrutura de Pastas
+
+```bash
+├── README.md
+├── src
+│   └── app
+│       ├── dashboard
+│       │   └── page.tsx
+│       ├── favicon.ico
+│       ├── globals.css
+│       ├── google-success
+│       │   └── page.tsx
+│       ├── layout.tsx
+│       ├── login
+│       │   └── page.tsx
+│       ├── page.tsx
+│       └── register
+│           └── page.tsx
+└── tsconfig.json
+```
+
+
+---
+
+## 🔧 Configuração
+
+### 1. Clonar o projeto
+
+```bash
+git clone https://github.com/seu-usuario/google-page.git
+cd google-page
+```
+
+1. Instalar as dependências:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+2. Executar localmente:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O app ficará disponível em:
+👉 http://localhost:3001 (ajustável via PORT)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔐 Autenticação
+🔸 Login Manual
+- Rota: POST http://localhost:3000/auth/login
+- Campos: email, password
+- Token armazenado no localStorage
+- Redireciona para /dashboard ao logar com sucesso
 
-## Learn More
+🔸 Login com Google
+- Botão redireciona para: http://localhost:3000/auth/google
+- Backend NestJS cuida da autenticação via Google
 
-To learn more about Next.js, take a look at the following resources:
+🔐 Usuário é redirecionado para:
+- http://localhost:3001/google-success?token=JWT_AQUI
+- O frontend captura o token da URL e o salva no localStorage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+📸 Telas
+- Login
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Cadastro
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚙️ Próximos Passos
+🔒 Proteção de rotas com middleware.ts
+
+📦 Integração com API protegida usando Authorization: Bearer
+
+🌍 Deploy no Vercel
+
+🧑‍💻 Desenvolvido por
+- Reinaldo Pereira dos Santos
+- Engenheiro de Software Fullstack
+
+📧 reinaldoper83@gmail.com
