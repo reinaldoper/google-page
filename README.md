@@ -87,7 +87,11 @@ O app ficará disponível em:
 📸 Telas
 - Login
 
+![login](./public/images/login.png)
+
 - Cadastro
+
+![register](./public/images/register.png)
 
 ⚙️ Próximos Passos
 🔒 Proteção de rotas com middleware.ts
